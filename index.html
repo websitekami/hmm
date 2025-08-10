@@ -1,0 +1,463 @@
+<html class="scroll-smooth" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Formulir Pendaftaran Pasien Rumah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col items-center p-4">
+    <header
+      class="w-full max-w-5xl mb-8 flex flex-col md:flex-row items-center justify-between gap-6"
+    >
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-3xl font-semibold text-blue-700 mb-2">
+          Formulir Pendaftaran Pasien Rumah
+        </h1>
+        <p class="text-gray-600">
+          Silakan isi data pasien dengan lengkap untuk pendaftaran layanan rumah
+          sakit.
+        </p>
+      </div>
+      <div class="flex-shrink-0">
+        <img
+          alt="Foto pembuat website, seorang pria dewasa mengenakan baju putih dan berkacamata tersenyum dengan latar belakang polos"
+          class="w-36 h-36 rounded-full object-cover border-4 border-blue-600 shadow-md mx-auto"
+          height="150"
+          loading="lazy"
+          src="https://storage.googleapis.com/a1aa/image/a9e02fe0-e08d-48ca-5ef4-76ade5c4cbe1.jpg"
+          width="150"
+        />
+        <p class="mt-2 text-center text-gray-700 font-medium">
+          Dibuat oleh: Budi Santoso
+        </p>
+      </div>
+    </header>
+    <main class="w-full max-w-5xl bg-white rounded-lg shadow-md p-6 mb-12">
+      <form
+        autocomplete="off"
+        class="space-y-6"
+        id="registrationForm"
+        novalidate=""
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-gray-700 font-semibold mb-1" for="nama">
+              Nama Lengkap
+              <span class="text-red-600"> * </span>
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan nama lengkap"
+              required=""
+              type="text"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-1" for="nik">
+              NIK (Nomor Induk Kependudukan)
+              <span class="text-red-600"> * </span>
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="nik"
+              maxlength="16"
+              name="nik"
+              pattern="\d{16}"
+              placeholder="16 digit NIK"
+              required=""
+              type="text"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-gray-700 font-semibold mb-1"
+              for="tanggalLahir"
+            >
+              Tanggal Lahir
+              <span class="text-red-600"> * </span>
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="tanggalLahir"
+              max=""
+              name="tanggalLahir"
+              required=""
+              type="date"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-gray-700 font-semibold mb-1"
+              for="jenisKelamin"
+            >
+              Jenis Kelamin
+              <span class="text-red-600"> * </span>
+            </label>
+            <select
+              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="jenisKelamin"
+              name="jenisKelamin"
+              required=""
+            >
+              <option disabled="" selected="" value="">
+                Pilih jenis kelamin
+              </option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-1" for="alamat">
+              Alamat Lengkap
+              <span class="text-red-600"> * </span>
+            </label>
+            <textarea
+              class="w-full border border-gray-300 rounded-md px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="alamat"
+              name="alamat"
+              placeholder="Masukkan alamat lengkap"
+              required=""
+              rows="3"
+            ></textarea>
+          </div>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-1" for="noHp">
+              Nomor HP
+              <span class="text-red-600"> * </span>
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="noHp"
+              name="noHp"
+              pattern="^\+?62\d{8,13}$"
+              placeholder="Contoh: +6281234567890"
+              required=""
+              type="tel"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-1" for="keluhan">
+              Keluhan / Penyakit
+              <span class="text-red-600"> * </span>
+            </label>
+            <textarea
+              class="w-full border border-gray-300 rounded-md px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="keluhan"
+              name="keluhan"
+              placeholder="Jelaskan keluhan atau penyakit"
+              required=""
+              rows="3"
+            ></textarea>
+          </div>
+          <div>
+            <label
+              class="block text-gray-700 font-semibold mb-1"
+              for="tanggalKunjungan"
+            >
+              Tanggal Kunjungan
+              <span class="text-red-600"> * </span>
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="tanggalKunjungan"
+              min=""
+              name="tanggalKunjungan"
+              required=""
+              type="date"
+            />
+          </div>
+        </div>
+        <div class="flex justify-end gap-4">
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-md transition-colors duration-200 flex items-center gap-2"
+            id="btnSubmit"
+            type="submit"
+          >
+            <i class="fas fa-paper-plane"> </i>
+            Daftar
+          </button>
+          <button
+            class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-6 py-2 rounded-md transition-colors duration-200 flex items-center gap-2 hidden"
+            id="btnCancelEdit"
+            type="button"
+          >
+            <i class="fas fa-times"> </i>
+            Batal Edit
+          </button>
+        </div>
+      </form>
+    </main>
+    <section
+      class="w-full max-w-5xl bg-white rounded-lg shadow-md p-6 mb-12 overflow-x-auto"
+    >
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4 text-center">
+        Data Pasien Terdaftar
+      </h2>
+      <table class="min-w-full border border-gray-300 text-sm text-left">
+        <thead class="bg-blue-100 text-blue-800 font-semibold">
+          <tr>
+            <th class="border border-gray-300 px-3 py-2">No</th>
+            <th class="border border-gray-300 px-3 py-2">Nama Lengkap</th>
+            <th class="border border-gray-300 px-3 py-2">NIK</th>
+            <th class="border border-gray-300 px-3 py-2">Tanggal Lahir</th>
+            <th class="border border-gray-300 px-3 py-2">Jenis Kelamin</th>
+            <th class="border border-gray-300 px-3 py-2">Alamat</th>
+            <th class="border border-gray-300 px-3 py-2">Nomor HP</th>
+            <th class="border border-gray-300 px-3 py-2">Keluhan</th>
+            <th class="border border-gray-300 px-3 py-2">Tanggal Kunjungan</th>
+            <th class="border border-gray-300 px-3 py-2 text-center">Aksi</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700" id="dataPasien">
+          <tr>
+            <td class="text-center py-4 text-gray-400 italic" colspan="10">
+              Belum ada data pasien yang terdaftar.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <footer class="w-full max-w-5xl text-center text-gray-500 mb-6">
+      © 2024 Rumah Sakit Stikes - Sistem Pendaftaran Pasien Rumah Sakit
+    </footer>
+    <script>
+      // Set max date for Tanggal Lahir to today
+      const tanggalLahirInput = document.getElementById("tanggalLahir");
+      const today = new Date().toISOString().split("T")[0];
+      tanggalLahirInput.setAttribute("max", today);
+
+      // Set min date for Tanggal Kunjungan to today
+      const tanggalKunjunganInput = document.getElementById("tanggalKunjungan");
+      tanggalKunjunganInput.setAttribute("min", today);
+
+      const form = document.getElementById("registrationForm");
+      const tbody = document.getElementById("dataPasien");
+      const btnSubmit = document.getElementById("btnSubmit");
+      const btnCancelEdit = document.getElementById("btnCancelEdit");
+
+      let editIndex = null;
+
+      function clearTablePlaceholder() {
+        if (
+          tbody.children.length === 1 &&
+          tbody.children[0].children[0].colSpan === 10
+        ) {
+          tbody.innerHTML = "";
+        }
+      }
+
+      function updateRowNumbers() {
+        Array.from(tbody.children).forEach((tr, i) => {
+          const noCell = tr.querySelector("td:first-child");
+          if (noCell) noCell.textContent = i + 1;
+        });
+      }
+
+      function createActionButtons() {
+        const container = document.createElement("div");
+        container.className = "flex justify-center gap-2";
+
+        const btnEdit = document.createElement("button");
+        btnEdit.type = "button";
+        btnEdit.className = "text-yellow-600 hover:text-yellow-800";
+        btnEdit.title = "Edit";
+        btnEdit.innerHTML = '<i class="fas fa-edit"></i>';
+        container.appendChild(btnEdit);
+
+        const btnDelete = document.createElement("button");
+        btnDelete.type = "button";
+        btnDelete.className = "text-red-600 hover:text-red-800";
+        btnDelete.title = "Hapus";
+        btnDelete.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        container.appendChild(btnDelete);
+
+        return { container, btnEdit, btnDelete };
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        // Validate NIK length and digits
+        const nik = form.nik.value.trim();
+        if (!/^\d{16}$/.test(nik)) {
+          alert("NIK harus terdiri dari 16 digit angka.");
+          form.nik.focus();
+          return;
+        }
+
+        // Validate Nomor HP pattern (Indonesia +62)
+        const noHp = form.noHp.value.trim();
+        if (!/^\+?62\d{8,13}$/.test(noHp)) {
+          alert(
+            "Nomor HP harus diawali dengan +62 dan diikuti 8-13 digit angka."
+          );
+          form.noHp.focus();
+          return;
+        }
+
+        clearTablePlaceholder();
+
+        if (editIndex === null) {
+          // Add new row
+          const tr = document.createElement("tr");
+          tr.classList.add("border-t", "border-gray-300");
+
+          const tdNo = document.createElement("td");
+          tdNo.className =
+            "border border-gray-300 px-3 py-1 align-top text-center";
+          tdNo.textContent = tbody.children.length + 1;
+
+          const tdNama = document.createElement("td");
+          tdNama.className = "border border-gray-300 px-3 py-1 align-top";
+          tdNama.textContent = form.nama.value.trim();
+
+          const tdNik = document.createElement("td");
+          tdNik.className =
+            "border border-gray-300 px-3 py-1 align-top font-mono";
+          tdNik.textContent = nik;
+
+          const tdTanggalLahir = document.createElement("td");
+          tdTanggalLahir.className =
+            "border border-gray-300 px-3 py-1 align-top";
+          tdTanggalLahir.textContent = form.tanggalLahir.value;
+
+          const tdJenisKelamin = document.createElement("td");
+          tdJenisKelamin.className =
+            "border border-gray-300 px-3 py-1 align-top";
+          tdJenisKelamin.textContent = form.jenisKelamin.value;
+
+          const tdAlamat = document.createElement("td");
+          tdAlamat.className =
+            "border border-gray-300 px-3 py-1 align-top whitespace-pre-line";
+          tdAlamat.textContent = form.alamat.value.trim();
+
+          const tdNoHp = document.createElement("td");
+          tdNoHp.className =
+            "border border-gray-300 px-3 py-1 align-top font-mono";
+          tdNoHp.textContent = noHp;
+
+          const tdKeluhan = document.createElement("td");
+          tdKeluhan.className =
+            "border border-gray-300 px-3 py-1 align-top whitespace-pre-line";
+          tdKeluhan.textContent = form.keluhan.value.trim();
+
+          const tdTanggalKunjungan = document.createElement("td");
+          tdTanggalKunjungan.className =
+            "border border-gray-300 px-3 py-1 align-top";
+          tdTanggalKunjungan.textContent = form.tanggalKunjungan.value;
+
+          const tdAksi = document.createElement("td");
+          tdAksi.className =
+            "border border-gray-300 px-3 py-1 align-top text-center";
+
+          const { container, btnEdit, btnDelete } = createActionButtons();
+          tdAksi.appendChild(container);
+
+          tr.appendChild(tdNo);
+          tr.appendChild(tdNama);
+          tr.appendChild(tdNik);
+          tr.appendChild(tdTanggalLahir);
+          tr.appendChild(tdJenisKelamin);
+          tr.appendChild(tdAlamat);
+          tr.appendChild(tdNoHp);
+          tr.appendChild(tdKeluhan);
+          tr.appendChild(tdTanggalKunjungan);
+          tr.appendChild(tdAksi);
+
+          tbody.appendChild(tr);
+
+          btnEdit.addEventListener("click", () => {
+            editIndex = Array.from(tbody.children).indexOf(tr);
+            btnSubmit.textContent = "";
+            btnSubmit.insertAdjacentHTML(
+              "beforeend",
+              '<i class="fas fa-save"></i> Simpan'
+            );
+            btnCancelEdit.classList.remove("hidden");
+
+            // Fill form with existing data
+            form.nama.value = tdNama.textContent;
+            form.nik.value = tdNik.textContent;
+            form.tanggalLahir.value = tdTanggalLahir.textContent;
+            form.jenisKelamin.value = tdJenisKelamin.textContent;
+            form.alamat.value = tdAlamat.textContent;
+            form.noHp.value = tdNoHp.textContent;
+            form.keluhan.value = tdKeluhan.textContent;
+            form.tanggalKunjungan.value = tdTanggalKunjungan.textContent;
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+
+          btnDelete.addEventListener("click", () => {
+            if (confirm("Apakah Anda yakin ingin menghapus data pasien ini?")) {
+              tr.remove();
+              if (tbody.children.length === 0) {
+                tbody.innerHTML =
+                  '<tr><td colspan="10" class="text-center py-4 text-gray-400 italic">Belum ada data pasien yang terdaftar.</td></tr>';
+              } else {
+                updateRowNumbers();
+              }
+            }
+          });
+        } else {
+          // Save edited row
+          const tr = tbody.children[editIndex];
+          if (!tr) return;
+
+          const cells = tr.children;
+          cells[1].textContent = form.nama.value.trim();
+          cells[2].textContent = nik;
+          cells[3].textContent = form.tanggalLahir.value;
+          cells[4].textContent = form.jenisKelamin.value;
+          cells[5].textContent = form.alamat.value.trim();
+          cells[6].textContent = noHp;
+          cells[7].textContent = form.keluhan.value.trim();
+          cells[8].textContent = form.tanggalKunjungan.value;
+
+          editIndex = null;
+          btnSubmit.textContent = "";
+          btnSubmit.insertAdjacentHTML(
+            "beforeend",
+            '<i class="fas fa-paper-plane"></i> Daftar'
+          );
+          btnCancelEdit.classList.add("hidden");
+        }
+
+        form.reset();
+        form.nama.focus();
+      });
+
+      btnCancelEdit.addEventListener("click", () => {
+        editIndex = null;
+        form.reset();
+        btnSubmit.textContent = "";
+        btnSubmit.insertAdjacentHTML(
+          "beforeend",
+          '<i class="fas fa-paper-plane"></i> Daftar'
+        );
+        btnCancelEdit.classList.add("hidden");
+        form.nama.focus();
+      });
+    </script>
+  </body>
+</html>
